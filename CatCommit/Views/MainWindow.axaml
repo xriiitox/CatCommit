@@ -15,6 +15,75 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid x:Name="Grid">
+        <TextBlock Text="Cat Commit Generator" 
+                   FontFamily="Monospace"
+                   FontSize="25"
+                   HorizontalAlignment="Center"
+                   Margin="0,25"/>
+        
+        <Image x:Name="Cat" /> <!-- Just a cat-->
+        <Image x:Name="Catmit"/> <!-- combined cat and commit -->
+        <TextBlock x:Name="Commit" FontFamily="MonoSpace"/>
+
+        <Button Background="MediumPurple"
+                Click="GetCommit_OnClick"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="60,20"
+                FontFamily="Monospace"
+                Content="Get a Commit message">
+            <Button.Styles>
+                <Style Selector="Button:pointerover">
+                    <Setter Property="ZIndex" Value="1" />
+                    <Setter Property="RenderTransform" Value="scale(1.575)" />
+                </Style>
+                <Style Selector="Button">
+                    <Setter Property="RenderTransform" Value="scale(1.5)" />
+                </Style>
+            </Button.Styles>
+        </Button>
+        <Button Background="MediumPurple"
+                Click="Cat_OnClick"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Margin="35, 20"
+                FontFamily="Monospace"
+                Content="Get a Cat">
+            <Button.Styles>
+                <Style Selector="Button:pointerover">
+                    <Setter Property="ZIndex" Value="1" />
+                    <Setter Property="RenderTransform" Value="scale(1.575)" />
+                </Style>
+                <Style Selector="Button">
+                    <Setter Property="RenderTransform" Value="scale(1.5)" />
+                </Style>
+            </Button.Styles>
+        </Button>
+        <Button Background="LightGreen"
+                Click="Combine_OnClick"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Margin="0, 75"
+                FontFamily="Monospace"
+                
+                Content="Combine!!!!">
+            <Button.Styles>
+                <Style Selector="Button:pointerover">
+                    <Setter Property="ZIndex" Value="1" />
+                    <Setter Property="RenderTransform" Value="skew(1000deg)"/>
+                </Style>
+                <Style Selector="Button">
+                    <Setter Property="RenderTransform" Value="scale(1.5)" />
+                </Style>
+            </Button.Styles>
+            <Button.Transitions>
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.5"/>
+                </Transitions>
+            </Button.Transitions>
+            
+        </Button>
+    </Grid>
 
 </Window>
